@@ -37,17 +37,17 @@ def upload_object():
 	s3 = boto3.resource(
 		service_name='s3',
 		region_name='us-east-1',
-		aws_access_key_id='ASIAUMRCJQNDHVD2JTIW',
-		aws_secret_access_key='7PQwZdpObyiXsx/9WJmpSHAknlxkDlvLJ7FW9rLA',
-		aws_session_token='FwoGZXIvYXdzEHwaDAlhWRFf1x/jYBoUUSLPAcurqOQ/7Fygo0E5zvNbCYamALbwTOQotQQCZbZUlN38MzLhOz3+dAs3L4uMFcng8gZdImmmfWqtM/emVNtAQgmxx3sIPue3UOJ0CsfjR2OLnvp260RDWSUDG2ROiVujmKcwUF+n6puKTKYN8O9G6WeHBA0GE1xMKVypYF3Wtq+56SLDS0QtyIjA1GSD65oXdQb2YfMaVG/Vr+eZilOSY273ap8z4ntGmbQe17TQc+1HrdPAAnZ58fEU03Wz3CFJGuq4JT7xIAH1bvPI7XtnHyjA2KeNBjItGJPUwRCrTgwbw9SswHmxfyuvCVy034IfOeQ1CN+0F0hS5vIblb1+FTOQQ1zK')
+		aws_access_key_id='ASIAQYD45YXPGR6QR2NT',
+		aws_secret_access_key='Gzz3FpTy37cIvkmhggEp+f4bjpbPQbJ/axzyE632',
+		aws_session_token='FwoGZXIvYXdzEP3//////////wEaDHxYdOQffhjKTVUiKCLKAUbirUiSQyBVSrF0YRt1iw/svvSzeQVqXXrawLukqiOvdlu/IVIYokqF0YhA3OPD8s8ZM4iPVnbWjNDor86oFbYefu18F99Lx/kcmYOw1BK9ip7CesQMvK/DpS7WHyDuooZquzfaGWD/CaqYNOIy1v4Dj37G7TBjAixWz2THRvGNY/UbdJMapK0SLYxsfpd0vI2oz0SNZZMe6BgQN+zTdPAx6gpp991828fav866W3ROWY1i4e3BERXrprWnipuNm1kKd2MoCTWbTgMo4bv8jQYyLX6HrjSkoxObrGvJykJxwAx+CgtoYFc8Megui4Nhmykl9Lu75YCR5xhgx3SUGA==')
 	#for bucket in s3.buckets.all():
 		#return bucket.name
 	if avatar:
 		avatar.save("%s/static/images/%s" % (app.root_path, avatar.filename))
 		#return "SUCCESSFUL"
 	#return "FAIL"
-	s3.Bucket('rekognition1').upload_file("static/images/"+avatar.filename, avatar.filename)
-	rekognitionImage = rekognition.detect_labels(avatar.filename, 'rekognition1')
+	s3.Bucket('rekognition3').upload_file("static/images/"+avatar.filename, avatar.filename)
+	rekognitionImage = rekognition.detect_labels(avatar.filename, 'rekognition3')
 	return render_template("rekognition_object.html", avatar=avatar.filename, rekog=rekognitionImage)
 
 
@@ -57,17 +57,17 @@ def upload_km():
 	s3 = boto3.resource(
 		service_name='s3',
 		region_name='us-east-1',
-		aws_access_key_id='ASIAUMRCJQNDHVD2JTIW',
-		aws_secret_access_key='7PQwZdpObyiXsx/9WJmpSHAknlxkDlvLJ7FW9rLA',
-		aws_session_token='FwoGZXIvYXdzEHwaDAlhWRFf1x/jYBoUUSLPAcurqOQ/7Fygo0E5zvNbCYamALbwTOQotQQCZbZUlN38MzLhOz3+dAs3L4uMFcng8gZdImmmfWqtM/emVNtAQgmxx3sIPue3UOJ0CsfjR2OLnvp260RDWSUDG2ROiVujmKcwUF+n6puKTKYN8O9G6WeHBA0GE1xMKVypYF3Wtq+56SLDS0QtyIjA1GSD65oXdQb2YfMaVG/Vr+eZilOSY273ap8z4ntGmbQe17TQc+1HrdPAAnZ58fEU03Wz3CFJGuq4JT7xIAH1bvPI7XtnHyjA2KeNBjItGJPUwRCrTgwbw9SswHmxfyuvCVy034IfOeQ1CN+0F0hS5vIblb1+FTOQQ1zK')
+		aws_access_key_id='ASIAQYD45YXPGR6QR2NT',
+		aws_secret_access_key='Gzz3FpTy37cIvkmhggEp+f4bjpbPQbJ/axzyE632',
+		aws_session_token='FwoGZXIvYXdzEP3//////////wEaDHxYdOQffhjKTVUiKCLKAUbirUiSQyBVSrF0YRt1iw/svvSzeQVqXXrawLukqiOvdlu/IVIYokqF0YhA3OPD8s8ZM4iPVnbWjNDor86oFbYefu18F99Lx/kcmYOw1BK9ip7CesQMvK/DpS7WHyDuooZquzfaGWD/CaqYNOIy1v4Dj37G7TBjAixWz2THRvGNY/UbdJMapK0SLYxsfpd0vI2oz0SNZZMe6BgQN+zTdPAx6gpp991828fav866W3ROWY1i4e3BERXrprWnipuNm1kKd2MoCTWbTgMo4bv8jQYyLX6HrjSkoxObrGvJykJxwAx+CgtoYFc8Megui4Nhmykl9Lu75YCR5xhgx3SUGA==')
 	#for bucket in s3.buckets.all():
 		#return bucket.name
 	if avatar:
 		avatar.save("%s/static/images/%s" % (app.root_path, avatar.filename))
 		#return "SUCCESSFUL"
 	#return "FAIL"
-	s3.Bucket('rekognition1').upload_file("static/images/"+avatar.filename, avatar.filename)
-	rekognitionImage = rekognition.detect_faces(avatar.filename, 'rekognition1')
+	s3.Bucket('rekognition3').upload_file("static/images/"+avatar.filename, avatar.filename)
+	rekognitionImage = rekognition.detect_faces(avatar.filename, 'rekognition3')
 	return render_template("rekognition_khuonmat.html", avatar=avatar.filename, rekog=rekognitionImage)
 
 
@@ -77,17 +77,17 @@ def upload_baoho():
 	s3 = boto3.resource(
 		service_name='s3',
 		region_name='us-east-1',
-		aws_access_key_id='ASIAUMRCJQNDHVD2JTIW',
-		aws_secret_access_key='7PQwZdpObyiXsx/9WJmpSHAknlxkDlvLJ7FW9rLA',
-		aws_session_token='FwoGZXIvYXdzEHwaDAlhWRFf1x/jYBoUUSLPAcurqOQ/7Fygo0E5zvNbCYamALbwTOQotQQCZbZUlN38MzLhOz3+dAs3L4uMFcng8gZdImmmfWqtM/emVNtAQgmxx3sIPue3UOJ0CsfjR2OLnvp260RDWSUDG2ROiVujmKcwUF+n6puKTKYN8O9G6WeHBA0GE1xMKVypYF3Wtq+56SLDS0QtyIjA1GSD65oXdQb2YfMaVG/Vr+eZilOSY273ap8z4ntGmbQe17TQc+1HrdPAAnZ58fEU03Wz3CFJGuq4JT7xIAH1bvPI7XtnHyjA2KeNBjItGJPUwRCrTgwbw9SswHmxfyuvCVy034IfOeQ1CN+0F0hS5vIblb1+FTOQQ1zK')
+		aws_access_key_id='ASIAQYD45YXPGR6QR2NT',
+		aws_secret_access_key='Gzz3FpTy37cIvkmhggEp+f4bjpbPQbJ/axzyE632',
+		aws_session_token='FwoGZXIvYXdzEP3//////////wEaDHxYdOQffhjKTVUiKCLKAUbirUiSQyBVSrF0YRt1iw/svvSzeQVqXXrawLukqiOvdlu/IVIYokqF0YhA3OPD8s8ZM4iPVnbWjNDor86oFbYefu18F99Lx/kcmYOw1BK9ip7CesQMvK/DpS7WHyDuooZquzfaGWD/CaqYNOIy1v4Dj37G7TBjAixWz2THRvGNY/UbdJMapK0SLYxsfpd0vI2oz0SNZZMe6BgQN+zTdPAx6gpp991828fav866W3ROWY1i4e3BERXrprWnipuNm1kKd2MoCTWbTgMo4bv8jQYyLX6HrjSkoxObrGvJykJxwAx+CgtoYFc8Megui4Nhmykl9Lu75YCR5xhgx3SUGA==')
 	#for bucket in s3.buckets.all():
 		#return bucket.name
 	if avatar:
 		avatar.save("%s/static/images/%s" % (app.root_path, avatar.filename))
 		#return "SUCCESSFUL"
 	#return "FAIL"
-	s3.Bucket('rekognition1').upload_file("static/images/"+avatar.filename, avatar.filename)
-	A= rekognition.detect_baoho(avatar.filename, 'rekognition1')
+	s3.Bucket('rekognition3').upload_file("static/images/"+avatar.filename, avatar.filename)
+	A= rekognition.detect_baoho(avatar.filename, 'rekognition3')
 	return render_template("rekognition_baoho.html", avatar=avatar.filename, A=A)
 
 
