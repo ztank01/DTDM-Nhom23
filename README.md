@@ -56,11 +56,11 @@ Thêm đoạn code sau vào trên cùng của file<br>
     server 127.0.0.1:8000;<br>
 }<br>
 Thêm proxy_pass đến flaskhelloworld tại location /<br>
-  # Some code above<br>
+  #Some code above<br>
 location / {<br>
     proxy_pass http://flaskhelloworld;<br>
 }<br>
-# some code below<br>
+#some code below<br>
   
 Khởi động lại  Nginx — $ sudo systemctl restart nginx<br>
   
