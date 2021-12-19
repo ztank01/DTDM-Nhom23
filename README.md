@@ -46,6 +46,24 @@ Cuối cùng kích hoạt service mới được tạo<br>
  ### B8: Cài đặt Nginx bằng $ sudo apt-get install nginx, Sau đó chạy các lệnh<br>
   $ sudo systemctl start nginx<br>
   $ sudo systemctl enable nginx<br>
- 
+ Nếu thành công, khi ta truy cập vào Public IPv4 Address của EC2 sẽ hiện lên trang mặc định của nginx<br>
+  
+ ### B9: Cấu hình lại Nginx
+ Chỉnh sửa lại file mặc định trong thư mục sites-available bằng lệnh <br>
+  $ sudo vi /etc/nginx/sites-available/default <br>
+Thêm đoạn code sau vào trên cùng của file<br>
+  upstream flaskhelloworld {<br>
+    server 127.0.0.1:8000;<br>
+}<br>
+Thêm proxy_pass đến flaskhelloworld tại location /<br>
+  # Some code above<br>
+location / {<br>
+    proxy_pass http://flaskhelloworld;<br>
+}<br>
+# some code below<br>
+  
+Khởi động lại  Nginx — $ sudo systemctl restart nginx<br>
+  
+Bây giờ nếu ta truy cập vào Public IPv4 Address của EC2 sẽ hiện lên website của chúng ta
 
 Hướng dẫn cài đặt được tham khảo từ: https://medium.com/techfront/step-by-step-visual-guide-on-deploying-a-flask-application-on-aws-ec2-8e3e8b82c4f7
