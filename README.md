@@ -20,19 +20,22 @@ Nếu gặp lỗi, có thể tham khảo tại đây: https://askubuntu.com/ques
 
 ### B7:Chúng ta sẽ tạo <projectname>.service file trong thư mục /etc/systemd/system bằng lệnh - $ sudo vi /etc/systemd/system/<projectname>.service. với projectname nên trùng với tên thư mục đã được tạo ở B3. <projectname>.service có nội dung như sau:
   
-  [Unit]
+  <p>[Unit]
   Description=Gunicorn instance for a simple hello world app
   After=network.target
+  </p>
   
-  [Service]
+  </p>[Service]
   User=ubuntu
   Group=ubuntu <thay đổi tùy theo user chúng ta đang sử dụng thuộc group nào>
   WorkingDirectory=/home/ubuntu/<thư mục được tạo tại bước 3>/DTDM-Nhom23
   ExecStart=/home/ubuntu/<thư mục được tạo tại bước 3>/venv/bin/gunicorn -b localhost:8000 main:app
   Restart=always
+  </p>
   
-  [Install]
+  <p>[Install]
   WantedBy=multi-user.target
+  </p>
 
 Cuối cùng kích hoạt service mới được tạo
   $ sudo systemctl daemon-reload
