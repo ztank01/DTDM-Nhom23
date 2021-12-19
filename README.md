@@ -50,16 +50,22 @@ Cuối cùng kích hoạt service mới được tạo<br>
   
  ### B9: Cấu hình lại Nginx
  Chỉnh sửa lại file mặc định trong thư mục sites-available bằng lệnh <br>
+  
   $ sudo vi /etc/nginx/sites-available/default <br>
+  
 Thêm đoạn code sau vào trên cùng của file<br>
+  
   upstream flaskhelloworld {<br>
     server 127.0.0.1:8000;<br>
 }<br>
+  
 Thêm proxy_pass đến flaskhelloworld tại location /<br>
-  #Some code above<br>
+  
+#Some code above<br>
 location / {<br>
     proxy_pass http://flaskhelloworld;<br>
 }<br>
+  
 #some code below<br>
   
 Khởi động lại  Nginx — $ sudo systemctl restart nginx<br>
