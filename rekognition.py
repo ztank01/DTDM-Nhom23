@@ -5,9 +5,9 @@ def detect_labels(photo, bucket):
 
     client = boto3.client(service_name='rekognition',
                           region_name='us-east-1',
-                          aws_access_key_id='ASIAUMRCJQNDHVD2JTIW',
-                          aws_secret_access_key='7PQwZdpObyiXsx/9WJmpSHAknlxkDlvLJ7FW9rLA',
-                          aws_session_token='FwoGZXIvYXdzEHwaDAlhWRFf1x/jYBoUUSLPAcurqOQ/7Fygo0E5zvNbCYamALbwTOQotQQCZbZUlN38MzLhOz3+dAs3L4uMFcng8gZdImmmfWqtM/emVNtAQgmxx3sIPue3UOJ0CsfjR2OLnvp260RDWSUDG2ROiVujmKcwUF+n6puKTKYN8O9G6WeHBA0GE1xMKVypYF3Wtq+56SLDS0QtyIjA1GSD65oXdQb2YfMaVG/Vr+eZilOSY273ap8z4ntGmbQe17TQc+1HrdPAAnZ58fEU03Wz3CFJGuq4JT7xIAH1bvPI7XtnHyjA2KeNBjItGJPUwRCrTgwbw9SswHmxfyuvCVy034IfOeQ1CN+0F0hS5vIblb1+FTOQQ1zK')
+                          aws_access_key_id='ASIAQYD45YXPHTOELF7R',
+                          aws_secret_access_key='GNeZImL5m7PNs0Q1O1HNhBwTen+d2CZa/pN9cDPh',
+                          aws_session_token='FwoGZXIvYXdzEPX//////////wEaDAzRLOMzeFP99kgzDyLKASrpKhwBJmwioAjifkjUHjKaruwJr6Aa632JM0ctDSrSuX/Sb0EThfRYwOLgW4FqQMfqzivspq6KRwymGCf0q7MazTzlzdjxGvH0OUmrl5Hm08gBO8sRvLLWq55Ewc02nDiSc0ZvRWIRNhp/paS0Vf9zkQGtTBIfKnII90IB3cWhosKKBOhqkiFg3q5w0uQ9YUvzIHHPKDU1R+WQUSxHKaZPF/HtSAZDpmcL6rllPc9JM/r7uwJT/+75yTjtAgs/XJXkcZAYPm1RGQYo6Nv6jQYyLfGPRfR2KX2kr7OOxZuoRAuT1qkk48tpYEP5yjBI5j5gXJg4iTK4HUfHrZjwpQ==')
 
     response = client.detect_labels(Image={'S3Object': {'Bucket': bucket, 'Name': photo}}, MaxLabels=10)
     mang1=[]
