@@ -18,7 +18,7 @@ Nếu gặp lỗi, có thể tham khảo tại đây: https://askubuntu.com/ques
 
 ### B6: Cài đặt Gunicorn sử dụng -  $ pip install gunicorn. Sau đó, chạy Gunicorn — $ gunicorn -b 0.0.0.0:8000 main:app. Nếu thành công ta chuyển sang bước tiếp theo
 
-### B7:Chúng ta sẽ tạo <projectname>.service file trong thư mục /etc/systemd/system bằng lệnh - $ sudo vi /etc/systemd/system/<projectname>.service. với projectname nên trùng với tên thư mục đã được tạo ở B3. <projectname>.service có nội dung như sau:
+### B7:Chúng ta sẽ tạo <projectname>.service file trong thư mục /etc/systemd/system bằng lệnh - $ sudo vi /etc/systemd/system/<projectname>.service. với projectname nên trùng với tên thư mục đã được tạo ở B3. (projectname).service có nội dung như sau:
   
   <p>[Unit]<br>
   Description=Gunicorn instance for a simple hello world app<br>
@@ -27,9 +27,9 @@ Nếu gặp lỗi, có thể tham khảo tại đây: https://askubuntu.com/ques
   
   </p>[Service]<br>
   User=ubuntu<br>
-  Group=ubuntu <thay đổi tùy theo user chúng ta đang sử dụng thuộc group nào><br>
-  WorkingDirectory=/home/ubuntu/<thư mục được tạo tại bước 3>/DTDM-Nhom23<br>
-  ExecStart=/home/ubuntu/<thư mục được tạo tại bước 3>/venv/bin/gunicorn -b localhost:8000 main:app<br>
+  Group=ubuntu (thay đổi tùy theo user chúng ta đang sử dụng thuộc group nào)<br>
+  WorkingDirectory=/home/ubuntu/(thư mục được tạo tại bước 3)/DTDM-Nhom23<br>
+  ExecStart=/home/ubuntu/(thư mục được tạo tại bước 3)/venv/bin/gunicorn -b localhost:8000 main:app<br>
   Restart=always<br>
   </p>
   
@@ -39,8 +39,8 @@ Nếu gặp lỗi, có thể tham khảo tại đây: https://askubuntu.com/ques
 
 Cuối cùng kích hoạt service mới được tạo<br>
   $ sudo systemctl daemon-reload<br>
-  $ sudo systemctl start <projectname><br>
-  $ sudo systemctl enable <projectname><br>
+  $ sudo systemctl start (projectname)<br>
+  $ sudo systemctl enable (projectname)<br>
  Kiểm tra ứng dụng có chạy không bằng lệnh $ curl localhost:8000<br>
   
  ### B8: Cài đặt Nginx bằng $ sudo apt-get install nginx, Sau đó chạy các lệnh<br>
