@@ -18,7 +18,7 @@ Nếu gặp lỗi, có thể tham khảo tại đây: https://askubuntu.com/ques
 
 ### B6: Cài đặt Gunicorn sử dụng -  $ pip install gunicorn. Sau đó, chạy Gunicorn — $ gunicorn -b 0.0.0.0:8000 main:app. Nếu thành công ta chuyển sang bước tiếp theo
 
-### B7:Chúng ta sẽ tạo <projectname>.service file trong thư mục /etc/systemd/system bằng lệnh - $ sudo vi /etc/systemd/system/<projectname>.service. với projectname nên trùng với tên thư mục đã được tạo ở B3. (projectname).service có nội dung như sau:
+### B7:Chúng ta sẽ tạo <projectname>.service file trong thư mục /etc/systemd/system bằng lệnh - $ sudo vi /etc/systemd/system/(projectname).service. với projectname nên trùng với tên thư mục đã được tạo ở B3. (projectname).service có nội dung như sau:
   
   <p>[Unit]<br>
   Description=Gunicorn instance for a simple hello world app<br>
