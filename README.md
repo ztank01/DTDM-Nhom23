@@ -55,17 +55,19 @@ Cuối cùng kích hoạt service mới được tạo<br>
   
 Thêm đoạn code sau vào trên cùng của file<br>
   
-  upstream flaskhelloworld {<br>
-    server 127.0.0.1:8000;<br>
+  upstream flaskrekognition {<br>
+server 127.0.0.1:8000;<br>
 }<br>
+
   
 Thêm proxy_pass đến flaskhelloworld tại location /<br>
   
 #Some code above<br>
+
 location / {<br>
-    proxy_pass http://flaskhelloworld;<br>
+  proxy_pass http://flaskrekognition;<br>
 }<br>
-  
+
 #some code below<br>
   
 Khởi động lại  Nginx — $ sudo systemctl restart nginx<br>
