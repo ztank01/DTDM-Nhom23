@@ -3,9 +3,10 @@ import boto3
 from flask import Flask, request, render_template
 import rekognition
 
-aws_access_key_id = "ASIAQYD45YXPH6BNI644"
-aws_secret_access_key = "G4s01xqfLDt32VJK+smYKKwxlzo8R+15YltsOuU+"
-aws_session_token = "FwoGZXIvYXdzEHMaDKXnpXVKTlmT1VRwjSLKAbBEp3zBDvrtO9SYkESQ80VJazh5QbpjzCfzJKK61aLGtDdJO9BpUT9xlJ4EkJBIc/bKDwCEikxMB4PCF65hMdgpKyNv4AYT/oO+Pauh0PyoGSL0u14Xjee6cnP+VlRrvE2xzvi/Az8fGNb++L6tFMekMdRhieeojOJSErT41z/TSAA5Ip8appeWwukPS3LqXm2CuaCl4v7dt8Ean+pE6F3YewxCiQaacffKcNySZmfVgRkpBUsEJW0/RoMIelHpmD1Kzq+qc2EsNrYo/6uWjgYyLbgxTrM8MzmxMv6vxIEyBMHDy/B2LlUp8/8D+kO1+zdHmfyJ1ea6C9tqd2H0lA=="
+aws_access_key_id = "ASIAQYD45YXPDKGSBOUJ"
+aws_secret_access_key = "VOaLoUgAm/y6jAT51FsbKGnUsjtfB1/2ddCDDx9x"
+aws_session_token = "FwoGZXIvYXdzEHUaDOEQGnOfeIQXGzT4dCLKAQq/fRjnFUgw7zGmRa8L1t/uHA5iwWtcqBX5GS2wRyrAp15ey1Nh34uuK2sCh/JQqkTSbsSI1WUYUMtsBEemPL8wQiuoFprPg6lQzsCIPaJexptUF3zBPt9/UPLyFW1AnSHIY2d31DLu1yZnyN3Ha4awzJMO1G2kVg5n0d5NAZXOhqBNdyXZH5fbmRlXks0ZiWdlFEecOuf21deQv+IfVTd7sZk7/D29HGHKUj9T8PdQBsP/s8ZHsmgwVM/vmZGmdP2OB5DYf+/vbekol9qWjgYyLcOmrUPY2AlgYEzQ5oVHm2f4oJa7oSPQu1qxK9gq5tHjP6idMNtNsFpkyfV+wA==
+"
 
 
 app = Flask(__name__)
